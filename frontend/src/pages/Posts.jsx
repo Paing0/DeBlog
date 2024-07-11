@@ -14,7 +14,7 @@ const Posts = () => {
 export default Posts
 
 export const loader = async () => {
-  const response = await fetch("http://localhost:8080/posts")
+  const response = await fetch(`${dotenv.process.REACT_APP_DOMAIN}/posts`)
   if (!response.ok) {
     throw json(
       { message: "Server is down. Please come back later." },
