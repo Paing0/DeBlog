@@ -20,7 +20,7 @@ export default Details
 
 export const loader = async ({ request, params }) => {
   const response = await fetch(
-    `${process.env.REACT_APP_DOMAIN}/posts/${params.id}`
+    `${import.meta.env.VITE_APP_DOMAIN}/posts/${params.id}`
   )
   if (!response.ok) {
     throw json(
@@ -35,7 +35,7 @@ export const loader = async ({ request, params }) => {
 export const action = async ({ request, params }) => {
   const token = getToken()
   const response = await fetch(
-    `${dotenv.process.REACT_APP_DOMAIN}/posts/${params.id}`,
+    `${import.meta.env.VITE_APP_DOMAIN}/posts/${params.id}`,
     {
       method: request.method,
       headers: {

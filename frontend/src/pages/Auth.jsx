@@ -10,17 +10,17 @@ export default Auth
 export const action = async ({ request }) => {
   const searchParams = new URL(request.url).searchParams
   const mode = searchParams.get("mode") || "login"
-  const data = await request.formData()
 
   if (mode !== "login" && mode !== "signup") {
     throw json({ message: "Mode is incorrect" })
   }
 
+  const data = await request.formData()
   const authData = {
     email: data.get("email"),
     password: data.get("password"),
   }
-  const response = await fetch(`${process.env.REACT_APP_DOMAIN}/${mode}`, {
+  const response = await fetch(`${import.meta.env.VITE_APP_DOMAIN}/${mode}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

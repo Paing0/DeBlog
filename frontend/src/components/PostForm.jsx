@@ -105,11 +105,11 @@ export const action = async ({ request, params }) => {
     date: data.get("date"),
   }
 
-  let url = `${process.env.REACT_APP_DOMAIN}/posts`
+  let url = `${import.meta.env.VITE_APP_DOMAIN}/posts`
 
   if (method === "PATCH") {
     const id = params.id
-    url = `${process.env.REACT_APP_DOMAIN}/posts/${id}`
+    url = `${import.meta.env.VITE_APP_DOMAIN}/posts/${id}`
   }
 
   const response = await fetch(url, {

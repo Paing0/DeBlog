@@ -14,7 +14,7 @@ const Posts = () => {
 export default Posts
 
 export const loader = async () => {
-  const response = await fetch(`${dotenv.process.REACT_APP_DOMAIN}/posts`)
+  const response = await fetch(`${import.meta.env.VITE_APP_DOMAIN}/posts`)
   if (!response.ok) {
     throw json(
       { message: "Server is down. Please come back later." },

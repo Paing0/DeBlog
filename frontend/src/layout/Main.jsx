@@ -19,14 +19,13 @@ export const Main = () => {
       return
     }
     if (token === "TOKEN EXP") {
-      window.alert("Your token has expired. Please Login again")
       submit(null, { action: "/logout", method: "POST" })
     }
 
     const duration = getExpDuration()
 
     setTimeout(() => {
-      window.alert("Your token has expired. Please Login again")
+      window.alert("Your token has expired. Please login again")
       submit(null, { action: "/logout", method: "POST" })
     }, duration)
   }, [token, submit])
