@@ -9,9 +9,13 @@ const Error = () => {
       {error.status === 404 ? (
         <h1>404, Page not found</h1>
       ) : (
+        <>
         <h1>
           {error?.status ? `${error.status}, ${errorMessage}` : errorMessage}
         </h1>
+        <h1>(It can take a few seconds to start the server. If the server is
+            inactive for a while.)</h1>
+        </>
       )}
       <Link to={"/"}>
         <button className="text-lg border-solid p-2 mt-2 border-2 border-[#33a56]">
